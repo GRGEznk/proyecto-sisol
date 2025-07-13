@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: head"></head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+  <!-- SVG Icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol xmlns="http://www.w3.org/2000/svg" id="home-thermometer" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19 8a2 2 0 0 1 2 2v6.76c.61.55 1 1.35 1 2.24c0 1.66-1.34 3-3 3s-3-1.34-3-3c0-.89.39-1.69 1-2.24V10c0-1.1.9-2 2-2m0 1c-.55 0-1 .45-1 1v1h2v-1c0-.55-.45-1-1-1M5 20v-8H2l10-9l4.4 3.96A3.97 3.97 0 0 0 15 10v6c-.63.83-1 1.87-1 3l.1 1H5Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="pregnant-woman" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M10 22v-5H8v-7q0-1.25.875-2.125T11 7q1.25 0 2.125.875T14 10q.9.375 1.45 1.2T16 13v4h-3v5h-3Zm1-16q-.825 0-1.413-.588T9 4q0-.825.588-1.413T11 2q.825 0 1.413.588T13 4q0 .825-.588 1.413T11 6Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="nutrition" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M22 18a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-2h12v2M4 3h10a2 2 0 0 1 2 2v9H8v5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m0 3v2h2V6H4m10 2V6H8v2h6M4 10v2h2v-2H4m4 0v2h6v-2H8m-4 4v2h2v-2H4Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="local-pharmacy" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M3 21v-2l2-6l-2-6V5h12.7l1.45-4l2.35.85L18.35 5H21v2l-2 6l2 6v2H3Zm8-4h2v-3h3v-2h-3V9h-2v3H8v2h3v3Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="calendar" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M8 14q-.425 0-.713-.288T7 13q0-.425.288-.713T8 12q.425 0 .713.288T9 13q0 .425-.288.713T8 14Zm4 0q-.425 0-.713-.288T11 13q0-.425.288-.713T12 12q.425 0 .713.288T13 13q0 .425-.288.713T12 14Zm4 0q-.425 0-.713-.288T15 13q0-.425.288-.713T16 12q.425 0 .713.288T17 13q0 .425-.288.713T16 14ZM5 22q-.825 0-1.413-.588T3 20V6q0-.825.588-1.413T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.588 1.413T19 22H5Zm0-2h14V10H5v10Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="clock" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 20a8 8 0 0 0 8-8a8 8 0 0 0-8-8a8 8 0 0 0-8 8a8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10a10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67l-.75 1.23L11 13V7h1.5Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="quote-up" viewBox="0 0 24 24">
+      <path fill="currentColor" d="m10 7l-2 4h3v6H5v-6l2-4h3m8 0l-2 4h3v6h-6v-6l2-4h3Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="quote-down" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3l-2 4Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="facebook" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="youtube" viewBox="0 0 32 32">
+      <path fill="currentColor" d="M29.41 9.26a3.5 3.5 0 0 0-2.47-2.47C24.76 6.2 16 6.2 16 6.2s-8.76 0-10.94.59a3.5 3.5 0 0 0-2.47 2.47A36.13 36.13 0 0 0 2 16a36.13 36.13 0 0 0 .59 6.74a3.5 3.5 0 0 0 2.47 2.47c2.18.59 10.94.59 10.94.59s8.76 0 10.94-.59a3.5 3.5 0 0 0 2.47-2.47A36.13 36.13 0 0 0 30 16a36.13 36.13 0 0 0-.59-6.74ZM13.2 20.2v-8.4l7.27 4.2Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 256 256">
+      <path fill="currentColor" d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32Zm48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56Zm40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="twitter" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="linkedin" viewBox="0 0 512 512">
+      <path fill="currentColor" d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32Zm-273.3 373.43h-64.18V205.88h64.18ZM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43c0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43Zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44c-17.74 0-28.24 12-32.91 23.69c-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44c42.13 0 74 27.77 74 87.64Z" />
+    </symbol>
+  </svg>
+
+  <!-- Header -->
+  <div th:replace="fragments/header :: header"></div>
+  
+  <!-- Navbar -->
+  <div th:replace="fragments/header :: navbar"></div>
+
+  <!-- Intro Section -->
+  <section id="intro" class="position-relative overflow-hidden">
+    <div class="banner">
+      <div class="container">
+        <div class="banner-content position-absolute padding-large">
+          <h1 class="banner-title display-3 fw-bold text-dark">Nos preocupamos por tu bienestar</h1>
+          <p class="banner-desc mt-3 mb-4">Sistema Integral de Salud Ocupacional y Laboral. Brindamos atención médica de calidad con tecnología avanzada y profesionales especializados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about-us" class="padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="counter-info text-center">
+            <div class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <span class="counter-prefix">+</span>
+              <h5 class="timer display-4 fw-bold m-0" data-to="5120" data-speed="8000">5120</h5>
+            </div>
+            <p class="counter-description">Pacientes Felices</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="counter-info text-center">
+            <div class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <span class="counter-prefix">+</span>
+              <h5 class="timer display-4 fw-bold m-0" data-to="26" data-speed="8000">26</h5>
+            </div>
+            <p class="counter-description">Sucursales</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="counter-info text-center">
+            <div class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <span class="counter-prefix">+</span>
+              <h5 class="timer display-4 fw-bold m-0" data-to="53" data-speed="8000">53</h5>
+            </div>
+            <p class="counter-description">Médicos Especialistas</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="counter-info text-center">
+            <div class="counter-number text-primary-500 display-2 fw-semibold d-flex align-items-center justify-content-center">
+              <span class="counter-prefix">+</span>
+              <h5 class="timer display-4 fw-bold m-0" data-to="10" data-speed="8000">10</h5>
+            </div>
+            <p class="counter-description">Años de Experiencia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Services Section -->
+  <section id="our-services" style="background-image: url(/img/services-bg.jpg); background-repeat: no-repeat; background-position: center; background-position: top;">
+    <div class="container">
+      <div class="row">
+        <div class="display-header text-light d-flex flex-wrap justify-content-between padding-medium">
+          <div class="col-lg-5 col-md-6 col-sm-12">
+            <h2 class="text-light">Nuestros Mejores Servicios para tu Solución</h2>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <p class="text-light">Ofrecemos una amplia gama de servicios médicos especializados para cuidar de tu salud y bienestar integral.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 pb-3">
+          <div class="icon-box p-4 bg-light border-radius-10 text-center">
+            <div class="icon-box-icon">
+              <svg class="home-thermometer mt-3 primary-color-500" width="50" height="50">
+                <use xlink:href="#home-thermometer" />
+              </svg>
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title py-2">Médicos Generales</h3>
+              <p>Atención médica integral con profesionales altamente calificados.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pb-3">
+          <div class="icon-box p-4 bg-light border-radius-10 text-center">
+            <div class="icon-box-icon">
+              <svg class="pregnant-woman mt-3 primary-color-500" width="50" height="50">
+                <use xlink:href="#pregnant-woman" />
+              </svg>
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title py-2">Atención Prenatal</h3>
+              <p>Cuidado especializado para embarazadas y seguimiento del desarrollo fetal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pb-3">
+          <div class="icon-box p-4 bg-light border-radius-10 text-center">
+            <div class="icon-box-icon">
+              <svg class="nutrition mt-3 primary-color-500" width="50" height="50">
+                <use xlink:href="#nutrition" />
+              </svg>
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title py-2">Nutrición Clínica</h3>
+              <p>Asesoramiento nutricional personalizado para una vida más saludable.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pb-3">
+          <div class="icon-box p-4 bg-light border-radius-10 text-center">
+            <div class="icon-box-icon">
+              <svg class="local-pharmacy mt-3 primary-color-500" width="50" height="50">
+                <use xlink:href="#local-pharmacy" />
+              </svg>
+            </div>
+            <div class="icon-box-content">
+              <h3 class="card-title py-2">Atención Farmacéutica</h3>
+              <p>Servicios farmacéuticos especializados y asesoramiento en medicamentos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQs Section -->
+  <section id="faqs" class="padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="display-header mb-5">
+          <h2 class="display-5 fw-bold text-center text-dark">Preguntas Frecuentes</h2>
+        </div>
+        <div class="accordion" id="accordion">
+          <div class="accordion-item border-0 py-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fs-4 fw-bold text-dark bg-transparent focus-transparent text-capitalize shadow-none"
+                type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true"
+                aria-controls="faq1">
+                ¿Necesito registrarme para agendar una cita en la red SISOL?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse border-0 collapse show" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <p>Sí, es necesario. Para poder reservar una cita médica, primero debes crear una cuenta con tus datos personales. Esto ayuda a que tu información esté segura y a que el sistema pueda darte un mejor seguimiento.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 py-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fs-4 fw-bold text-dark bg-transparent collapsed focus-transparent text-capitalize shadow-none"
+                type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                aria-controls="faq2">
+                ¿Puedo cancelar una cita si ya no puedo asistir?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <p>Claro que sí. Puedes cancelar tu cita desde la misma plataforma donde la agendaste. Solo asegúrate de hacerlo con al menos unas horas de anticipación para liberar ese espacio para otro paciente.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 py-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fs-4 fw-bold text-dark bg-transparent collapsed focus-transparent text-capitalize shadow-none"
+                type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                aria-controls="faq3">
+                ¿Qué pasa si llego tarde a mi cita?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <p>Si llegas con retraso, hay una tolerancia breve (dependiendo del centro), pero si te pasas del tiempo, es probable que tengas que reagendar. Lo mejor es llegar con unos minutos de anticipación para evitar cualquier inconveniente.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 py-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fs-4 fw-bold text-dark bg-transparent collapsed focus-transparent text-capitalize shadow-none"
+                type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                aria-controls="faq4">
+                ¿Puedo sacar una cita para otra persona?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <p>Sí, siempre que tengas sus datos completos (DNI, nombre, fecha de nacimiento, etc.).</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 py-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fs-4 fw-bold text-dark bg-transparent collapsed focus-transparent text-capitalize shadow-none"
+                type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                aria-controls="faq5">
+                ¿Qué especialidades ofrece la red SISOL?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                <p>SISOL Salud cuenta con una amplia variedad de especialidades médicas: medicina general, odontología, ginecología, pediatría, dermatología, entre otras. Puedes ver la lista completa al momento de reservar tu cita.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Department Section -->
+  <section id="department" class="overflow-hidden">
+    <div class="container">
+      <div class="row">
+        <div class="medical-department-tab bg-primary-200 d-flex align-items-start padding-large ps-5 border-radius-20">
+          <div class="nav nav-tabs border-0 col-lg-3 col-md-3 ps-4" id="medical-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link text-uppercase text-cadet-blue border-0 bg-transparent pb-4 active" id="medicina-interna-tab" data-bs-toggle="tab" data-bs-target="#medicina-interna" type="button" role="tab" aria-controls="medicina-interna" aria-selected="true">Medicina Interna</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 bg-transparent pb-4" id="pediatria-tab" data-bs-toggle="tab" data-bs-target="#pediatria" type="button" role="tab" aria-controls="pediatria" aria-selected="false">Pediatría</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 bg-transparent pb-4" id="ginecologia-tab" data-bs-toggle="tab" data-bs-target="#ginecologia" type="button" role="tab" aria-controls="ginecologia" aria-selected="false">Ginecología y Obstetricia</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 bg-transparent pb-4" id="cirugia-tab" data-bs-toggle="tab" data-bs-target="#cirugia" type="button" role="tab" aria-controls="cirugia" aria-selected="false">Cirugía General</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 bg-transparent pb-4" id="salud-mental-tab" data-bs-toggle="tab" data-bs-target="#salud-mental" type="button" role="tab" aria-controls="salud-mental" aria-selected="false">Salud Mental</button>
+            <button class="nav-link text-uppercase text-cadet-blue border-0 bg-transparent" id="rehabilitacion-tab" data-bs-toggle="tab" data-bs-target="#rehabilitacion" type="button" role="tab" aria-controls="rehabilitacion" aria-selected="false">Rehabilitación y Medicina Física</button>
+          </div>
+          <div class="tab-content col-lg-8 col-md-8" id="tabContent">
+            <div class="tab-pane fade show active position-relative" id="medicina-interna" role="tabpanel" aria-labelledby="medicina-interna-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Medicina Interna</h2>
+              <p>Especialidad médica que se enfoca en la atención integral del adulto, incluyendo diagnóstico, tratamiento y seguimiento de enfermedades crónicas o complejas (como hipertensión, diabetes, insuficiencia renal, etc.).</p>
+              <ul class="department-links">
+                <li>Control de enfermedades crónicas</li>
+                <li>Evaluación de fatiga crónica o pérdida de peso inexplicada</li>
+                <li>Diagnóstico diferencial de síntomas multisistémicos</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade position-relative" id="pediatria" role="tabpanel" aria-labelledby="pediatria-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Pediatría</h2>
+              <p>Atiende la salud física y mental de niños, desde recién nacidos hasta adolescentes. Se enfoca en la prevención, diagnóstico y tratamiento de enfermedades infantiles.</p>
+              <ul class="department-links">
+                <li>Control de crecimiento y desarrollo</li>
+                <li>Vacunación infantil</li>
+                <li>Manejo de infecciones respiratorias o digestivas</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade position-relative" id="ginecologia" role="tabpanel" aria-labelledby="ginecologia-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Ginecología y Obstetricia</h2>
+              <p>Especialidad que cubre la salud reproductiva de la mujer, incluyendo embarazo, parto, menstruación, menopausia y prevención de cáncer ginecológico.</p>
+              <ul class="department-links">
+                <li>Control prenatal</li>
+                <li>Papanicolaou y colposcopía</li>
+                <li>Planificación familiar y colocación de métodos anticonceptivos</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade position-relative" id="cirugia" role="tabpanel" aria-labelledby="cirugia-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Cirugía General</h2>
+              <p>Incluye procedimientos quirúrgicos para enfermedades del sistema digestivo, hernias, vesícula biliar, entre otros. Es una de las especialidades más requeridas en hospitales públicos y clínicas.</p>
+              <ul class="department-links">
+                <li>Colecistectomía</li>
+                <li>Hernioplastía</li>
+                <li>Apendicectomía</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade position-relative" id="salud-mental" role="tabpanel" aria-labelledby="salud-mental-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Psiquiatría y Psicología</h2>
+              <p>Se enfoca en la prevención, diagnóstico y tratamiento de trastornos emocionales, conductuales o cognitivos. Es una prioridad creciente en Lima por el aumento de casos de ansiedad, depresión y estrés postpandemia.</p>
+              <ul class="department-links">
+                <li>Consulta psicológica individual</li>
+                <li>Evaluación psiquiátrica y farmacoterapia</li>
+                <li>Psicoterapia para adolescentes y adultos</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade position-relative" id="rehabilitacion" role="tabpanel" aria-labelledby="rehabilitacion-tab" tabindex="0">
+              <h2 class="display-5 fw-bold pb-3 text-dark">Rehabilitación y Medicina Física</h2>
+              <p>Busca recuperar o mejorar la funcionalidad de personas con discapacidades físicas o tras una lesión. Muy usado en casos postoperatorios o enfermedades neurológicas.</p>
+              <ul class="department-links">
+                <li>Terapia física y ocupacional</li>
+                <li>Rehabilitación post-ACV</li>
+                <li>Tratamiento de dolor músculo-esquelético</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div th:replace="fragments/footer :: footer"></div>
+
+  <!-- Scripts -->
+  <div th:replace="fragments/footer :: scripts"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <div th:replace="fragments/login :: loginModal"></div>
+
+</body>
+</html>
