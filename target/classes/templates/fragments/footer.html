@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- Footer -->
+<footer id="footer" class="overflow-hidden padding-large pb-0" th:fragment="footer">
+  <div class="container">
+    <div class="row d-flex flex-wrap justify-content-between">
+      <div class="col-lg-4 col-md-6 col-sm-6 pb-3">
+        <div class="footer-menu">
+          <img th:src="@{/img/logo.svg}" alt="SISOL Logo" class="pb-3">
+          <p>Sistema Integral de Salud Ocupacional y Laboral. Brindamos atención médica de calidad con tecnología avanzada.</p>
+          <div class="contact-item">
+            <p>
+              <svg class="location primary-color" width="25" height="25">
+                <use xlink:href="#location"></use>
+              </svg>
+              <span>Av. Principal 123, Lima, Perú</span>
+            </p>
+            <p>
+              <svg class="email primary-color" width="25" height="25">
+                <use xlink:href="#email"></use>
+              </svg>
+              <a href="mailto:info@sisol.gob.pe">info@sisol.gob.pe</a>
+            </p>
+            <p>
+              <svg class="phone primary-color" width="25" height="25">
+                <use xlink:href="#phone"></use>
+              </svg>
+              <span>(+51) 1 234 5678</span>
+            </p>
+            <ul class="social-links list-unstyled d-flex mt-3">
+              <li>
+                <a href="#">
+                  <svg class="facebook text-primary-500 me-3" width="25" height="25">
+                    <use xlink:href="#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="twitter text-primary-500 me-3" width="25" height="25">
+                    <use xlink:href="#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="instagram text-primary-500 me-3" width="25" height="25">
+                    <use xlink:href="#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="youtube text-primary-500 me-3" width="25" height="25">
+                    <use xlink:href="#youtube"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="linkedin text-primary-500" width="25" height="25">
+                    <use xlink:href="#linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6 pb-3">
+        <div class="footer-menu">
+          <h5 class="widget-title pb-2 fw-semibold">Enlaces Rápidos</h5>
+          <ul class="menu-list list-unstyled">
+            <li class="pb-2">
+              <a th:href="@{/}">Inicio</a>
+            </li>
+            <li class="pb-2">
+              <a th:href="@{/#about-us}">Nosotros</a>
+            </li>
+            <li class="pb-2">
+              <a th:href="@{/#our-services}">Servicios</a>
+            </li>
+            <li class="pb-2">
+              <a th:href="@{/#faqs}">Preguntas Frecuentes</a>
+            </li>
+            <li class="pb-2">
+              <a th:href="@{/#department}">Especialidades</a>
+            </li>
+            
+           
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6 pb-3">
+        <div class="footer-menu">
+          <h5 class="widget-title fw-semibold">Horarios de Atención</h5>
+          <table class="schedule">
+            <tr class="d-flex justify-content-between border-bottom py-2">
+              <td>Lunes - Jueves</td>
+              <td class="text-primary">8:00 am - 6:00 pm</td>
+            </tr>
+            <tr class="d-flex justify-content-between border-bottom py-2">
+              <td>Viernes - Sábado</td>
+              <td class="text-primary">10:00 am - 4:00 pm</td>
+            </tr>
+            <tr class="d-flex justify-content-between border-bottom py-2">
+              <td>Domingo</td>
+              <td class="text-primary">Solo emergencias</td>
+            </tr>
+            <tr class="d-flex justify-content-between border-bottom py-2">
+              <td>Atención Personal</td>
+              <td class="text-primary">7:00 pm - 9:00 pm</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="d-md-flex text-center justify-content-between border-top mt-5 py-4">
+      <p>© 2024 SISOL - Todos los derechos reservados</p>
+      <p>Sistema Integral de Salud Ocupacional y Laboral</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<div th:fragment="scripts">
+  <!-- jQuery -->
+  <script th:src="@{/js/jquery-1.11.0.min.js}"></script>
+  
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom Scripts -->
+  <script th:src="@{/js/plugins.js}"></script>
+  <script th:src="@{/js/script.js}"></script>
+  
+  <!-- Navbar Dinámico -->
+  <script th:src="@{/js/navbar.js}"></script>
+  
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</div>
+
+</html> 
