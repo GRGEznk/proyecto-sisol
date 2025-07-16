@@ -97,18 +97,18 @@
               <a class="nav-link active" aria-current="page" th:href="@{/}">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" th:href="@{/#about-us}">Nosotros</a>
+              <a class="nav-link" th:href="@{/nosotros}">Nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" th:href="@{/#our-services}" th:if="${usuario != null}" href="#">Servicios</a>
+              <a class="nav-link" th:href="@{/servicios}" th:if="${usuario != null}">Servicios</a>
               <a class="nav-link disabled" th:if="${usuario == null}" href="#" onclick="mostrarAccesoDenegado('Debes iniciar sesión para acceder a Servicios.')">Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" th:href="@{/#book-appointment}" th:if="${usuario != null}" href="#">Mi agenda de Citas</a>
+              <a class="nav-link" th:href="@{/agenda-citas}" th:if="${usuario != null}">Mi agenda de Citas</a>
               <a class="nav-link disabled" th:if="${usuario == null}" href="#" onclick="mostrarAccesoDenegado('Debes iniciar sesión para acceder a tu agenda de citas.')">Mi agenda de Citas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" th:href="@{/#pagos}" th:if="${usuario != null}" href="#">Pagos</a>
+              <a class="nav-link" th:href="@{/pagos}" th:if="${usuario != null}">Pagos</a>
               <a class="nav-link disabled" th:if="${usuario == null}" href="#" onclick="mostrarAccesoDenegado('Debes iniciar sesión para acceder a Pagos.')">Pagos</a>
             </li>
             <li><hr class="dropdown-divider"></li>
@@ -126,7 +126,7 @@
                   <div class="text-muted small" th:text="${usuario.correo}"></div>
                 </li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
+                <li><a class="dropdown-item" th:href="@{/mi-cuenta}">Mi cuenta</a></li>
                 <li><a class="dropdown-item" th:href="@{/auth/logout}">Cerrar sesión</a></li>
               </ul>
             </li>
@@ -156,18 +156,18 @@
               <a class="nav-link text-dark active p-0 mt-3 mt-lg-0" aria-current="page" th:href="@{/}">Inicio</a>
             </li>
             <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" th:href="@{/#about-us}">Nosotros</a>
+              <a class="nav-link text-dark p-0" th:href="@{/nosotros}">Nosotros</a>
             </li>
             <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" th:href="@{/#our-services}" th:if="${usuario != null}" href="#">Servicios</a>
+              <a class="nav-link text-dark p-0" th:href="@{/servicios}" th:if="${usuario != null}">Servicios</a>
               <a class="nav-link text-dark p-0 disabled" th:if="${usuario == null}" href="#" onclick="mostrarAccesoDenegado('Debes iniciar sesión para acceder a Servicios.')">Servicios</a>
             </li>
             <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" th:href="@{/#book-appointment}" th:if="${usuario != null}" href="#">Mi agenda de Citas</a>
+              <a class="nav-link text-dark p-0" th:href="@{/agenda-citas}" th:if="${usuario != null}">Mi agenda de Citas</a>
               <a class="nav-link text-dark p-0 disabled" th:if="${usuario == null}" href="#" onclick="mostrarAccesoDenegado('Debes iniciar sesión para acceder a tu agenda de citas.')">Mi agenda de Citas</a>
             </li>
             <li class="nav-item ps-4 pe-4 border-right">
-              <a class="nav-link text-dark p-0" th:href="@{/#pagos}" th:if="${usuario != null}" href="#">Pagos</a>
+              <a class="nav-link text-dark p-0" th:href="@{/pagos}" th:if="${usuario != null}">Pagos</a>
               <a class="nav-link text-dark p-0 disabled" th:if="${usuario == null}" href="#" onclick="mostrarAccesoDenegado('Debes iniciar sesión para acceder a Pagos.')">Pagos</a>
             </li>
             <li class="nav-item ps-4 pe-3" th:if="${usuario == null}">
@@ -184,7 +184,7 @@
                   <div class="text-muted small" th:text="${usuario.correo}"></div>
                 </li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
+                <li><a class="dropdown-item" th:href="@{/mi-cuenta}">Mi cuenta</a></li>
                 <li><a class="dropdown-item" th:href="@{/auth/logout}">Cerrar sesión</a></li>
               </ul>
             </li>

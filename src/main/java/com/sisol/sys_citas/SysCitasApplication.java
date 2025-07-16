@@ -20,7 +20,8 @@ public class SysCitasApplication implements CommandLineRunner {
 
 		// TEST: Imprimir todos los datos de la tabla usuario
 		try (Connection conn = DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/db_hospital_v3", "root", "");
+				"jdbc:mysql://b1jtzezamaqwnwpzugkm-mysql.services.clever-cloud.com:3306/b1jtzezamaqwnwpzugkm", 
+				"u6wsmpzzu2oj7nfu", "1SlBK4mISHUjE3yGfo8h");
 			 java.sql.Statement stmt = conn.createStatement();
 			 java.sql.ResultSet rs = stmt.executeQuery("SELECT * FROM usuario")) {
 

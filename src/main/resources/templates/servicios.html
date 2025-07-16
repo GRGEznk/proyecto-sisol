@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: head"></head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+  <!-- Header -->
+  <div th:replace="fragments/header :: header"></div>
+  
+  <!-- Navbar -->
+  <div th:replace="fragments/header :: navbar"></div>
+
+  <!-- Main Content -->
+  <main class="padding-large">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="display-header mb-5">
+            <h1 class="display-4 fw-bold text-center text-dark">Nuestros Servicios</h1>
+            <p class="lead text-center text-muted">Descubre nuestra amplia gama de servicios médicos especializados</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servicios Principales -->
+      <div class="row mb-5">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-heart-pulse text-primary display-4 mb-3"></i>
+              <h4 class="card-title">Medicina General</h4>
+              <p class="card-text">Atención médica integral con profesionales altamente calificados para el diagnóstico y tratamiento de enfermedades comunes.</p>
+              <ul class="list-unstyled text-start">
+                <li><i class="bi bi-check-circle text-success me-2"></i>Consultas médicas</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Diagnóstico clínico</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Tratamiento de enfermedades</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Medicina preventiva</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-people text-primary display-4 mb-3"></i>
+              <h4 class="card-title">Medicina Ocupacional</h4>
+              <p class="card-text">Servicios especializados en salud laboral y prevención de riesgos ocupacionales para empresas y trabajadores.</p>
+              <ul class="list-unstyled text-start">
+                <li><i class="bi bi-check-circle text-success me-2"></i>Exámenes ocupacionales</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Evaluaciones pre-ocupacionales</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Medicina del trabajo</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Prevención de riesgos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-pregnant-woman text-primary display-4 mb-3"></i>
+              <h4 class="card-title">Atención Prenatal</h4>
+              <p class="card-text">Cuidado especializado para embarazadas con seguimiento completo del desarrollo fetal y la salud materna.</p>
+              <ul class="list-unstyled text-start">
+                <li><i class="bi bi-check-circle text-success me-2"></i>Control prenatal</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Ecografías obstétricas</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Monitoreo fetal</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Educación prenatal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-apple text-primary display-4 mb-3"></i>
+              <h4 class="card-title">Nutrición Clínica</h4>
+              <p class="card-text">Asesoramiento nutricional personalizado para mejorar la salud y calidad de vida de nuestros pacientes.</p>
+              <ul class="list-unstyled text-start">
+                <li><i class="bi bi-check-circle text-success me-2"></i>Evaluación nutricional</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Planes alimenticios</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Nutrición terapéutica</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Educación nutricional</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-capsule text-primary display-4 mb-3"></i>
+              <h4 class="card-title">Atención Farmacéutica</h4>
+              <p class="card-text">Servicios farmacéuticos especializados con asesoramiento profesional en medicamentos y tratamientos.</p>
+              <ul class="list-unstyled text-start">
+                <li><i class="bi bi-check-circle text-success me-2"></i>Dispensación de medicamentos</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Asesoramiento farmacéutico</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Control de interacciones</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Farmacovigilancia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center p-4">
+              <i class="bi bi-clipboard-pulse text-primary display-4 mb-3"></i>
+              <h4 class="card-title">Laboratorio Clínico</h4>
+              <p class="card-text">Análisis clínicos de alta precisión con tecnología avanzada para un diagnóstico certero y confiable.</p>
+              <ul class="list-unstyled text-start">
+                <li><i class="bi bi-check-circle text-success me-2"></i>Análisis de sangre</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Análisis de orina</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Pruebas especializadas</li>
+                <li><i class="bi bi-check-circle text-success me-2"></i>Resultados rápidos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servicios Especializados -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="h3 mb-4 text-center">Servicios Especializados</h2>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-calendar-check text-primary display-5 me-3"></i>
+                <h5 class="card-title mb-0">Agenda de Citas</h5>
+              </div>
+              <p class="card-text">Sistema de agendamiento de citas médicas online, fácil y rápido. Reserva tu cita con el especialista que necesites.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-credit-card text-primary display-5 me-3"></i>
+                <h5 class="card-title mb-0">Pagos Online</h5>
+              </div>
+              <p class="card-text">Realiza el pago de tus consultas y servicios de forma segura a través de nuestra plataforma de pagos online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Información de Contacto -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card bg-primary text-white border-0">
+            <div class="card-body text-center p-5">
+              <h3 class="mb-3">¿Necesitas más información?</h3>
+              <p class="lead mb-4">Nuestro equipo está listo para ayudarte a encontrar el servicio que mejor se adapte a tus necesidades.</p>
+              <a href="#" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">Contactar Ahora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div th:replace="fragments/footer :: footer"></div>
+
+  <!-- Login Modal -->
+  <div th:replace="fragments/login :: loginModal"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script th:src="@{/js/navbar.js}"></script>
+</body>
+</html> 
